@@ -27,6 +27,17 @@ export class AppComponent {
   onUserClick(user: { name: string; surname: string; phone: string; address: string; type: string }): void {
     this.selectedUser = user;
   }
+
+  onCloseSideInfo(): void {
+    this.selectedUser = null; // Oculta el panel lateral
+  }
+
+  onAddUser(): void {
+    // Aquí puedes agregar lógica para añadir un nuevo usuario
+    console.log('Añadir usuario');
+    // Ejemplo: Abrir un formulario modal o redirigir a una nueva vista
+  }
+  
 }
 
 export interface User {
@@ -36,4 +47,3 @@ export interface User {
   address: string;
   type: string;
 }
-

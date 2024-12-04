@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 
 @Component({
   selector: 'app-side-info',
@@ -11,20 +10,9 @@ import { CommonModule } from '@angular/common';
 })
 export class SideInfoComponent {
   @Input() user: { name: string; surname: string; phone: string; address: string; type: string } | null = null;
+  @Output() close = new EventEmitter<void>();
 
-  closeSideInfo() {
-    const sideInfoElement = document.querySelector('.side-info') as HTMLElement;
-    if (sideInfoElement) {
-      sideInfoElement.style.display = 'none';
-    }
+  onClose(): void {
+    this.close.emit();
   }
 }
-
-export interface User {
-  name: string;
-  surname: string;
-  phone: string;
-  address: string;
-  type: string;
-}
-

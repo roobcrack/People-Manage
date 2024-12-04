@@ -1,41 +1,44 @@
 <header>
-    <h1>Welcome to the users list</h1>
-  </header>
-  
-  <main>
-    <div class="user-list-container">
-        <section class="checkboxes">
-            <label><input type="checkbox" name="option1" value="1"> People</label>
-            <label><input type="checkbox" name="option2" value="2"> Clients</label>
-            <label><input type="checkbox" name="option3" value="3"> Funcionaries</label>
-        </section>
-      <table class="user-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Surname</th>
-            <th>Phone</th>
-            <th>Address</th>
-            <th>Type</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let user of users" (click)="onUserClick(user)">
-            <td>{{ user.name }}</td>
-            <td>{{ user.surname }}</td>
-            <td>{{ user.phone }}</td>
-            <td>{{ user.address }}</td>
-            <td>{{ user.type }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </main>
-  
-  <!-- SideInfoComponent -->
-  <app-side-info [user]="selectedUser"></app-side-info>
-  
-  <footer>
-    <p>&copy; Made by Rubén Martínez 2024.</p>
-  </footer>
-  
+  <h1>Welcome to the {{title}}</h1>
+</header>
+
+<main>
+  <div class="user-list-container">
+    <button class="add-button" (click)="onAddUser()">Añadir</button>
+    <section class="checkboxes">
+      <label><input type="checkbox" name="option1" value="1"> People</label>
+      <label><input type="checkbox" name="option2" value="2"> Clients</label>
+      <label><input type="checkbox" name="option3" value="3"> Funcionaries</label>
+    </section>
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Phone</th>
+          <th>Address</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users" (click)="onUserClick(user)">
+          <td>{{ user.name }}</td>
+          <td>{{ user.surname }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.address }}</td>
+          <td>{{ user.type }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<app-side-info 
+  *ngIf="selectedUser"
+  [user]="selectedUser"
+  (close)="onCloseSideInfo()">
+</app-side-info>
+
+<footer>
+  <p>&copy; Made by Rubén Martínez 2024.</p>
+</footer>
