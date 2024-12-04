@@ -1,0 +1,11 @@
+<div class="side-info" *ngIf="user">
+  <button class="close-btn" (click)="closeSideInfo()">×</button>
+  <h3>Person Info</h3>
+  <ul>
+    <li><strong>Name:</strong> {{ user.name }}</li>
+    <li><strong>Surname:</strong> {{ user.surname }}</li>
+    <li><strong>Phone:</strong> {{ user.phone }}</li>
+    <li><strong>Address:</strong> {{ user.address }}</li>
+    <li><strong>Type:</strong> {{ user.type }}</li>
+  </ul>
+</div>

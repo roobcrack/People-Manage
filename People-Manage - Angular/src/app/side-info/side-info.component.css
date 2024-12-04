@@ -1,0 +1,61 @@
+.side-info {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    z-index: 1000;
+  }
+  
+  .side-info h3 {
+    text-align: center;
+    color: #007BFF;
+    margin-bottom: 1rem;
+  }
+  
+  .side-info ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .side-info li {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 6px;
+  }
+  
+  .side-info li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .side-info strong {
+    color: #333;
+  }
+  
+  .side-info li:hover {
+    background-color: #f1f1f1;
+    border-color: #ddd;
+  }
+  
+  /* Close Button */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #666;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover {
+    color: #000;
+  }
+  
